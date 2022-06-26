@@ -32,3 +32,9 @@ style: Changes that do not affect the meaning of the code (white-space, formatti
 test: Adding missing tests or correcting existing tests
 chore: alterações dependencias
 
+## Github
+
+git remote add github https://github.com/waldirjunior/arquitetura-limpa.git
+git branch -M main
+git push -u github main
+

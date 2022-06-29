@@ -33,6 +33,7 @@ test: Adding missing tests or correcting existing tests
 chore: alterações dependencias
 
 ## Github
+https://github.com/waldirjunior/arquitetura-limpa
 
 git remote add github https://github.com/waldirjunior/arquitetura-limpa.git
 git branch -M main

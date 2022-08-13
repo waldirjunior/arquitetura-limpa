@@ -1,5 +1,4 @@
 import { Either, left, right } from '../shared/either'
-import { InvalidEmailError } from './errors/invalid-email-error'
 import { InvalidNameError } from './errors/invalid-name-error'
 
 export class Name {
@@ -11,7 +10,7 @@ export class Name {
 
   public static create (name: string): Either<InvalidNameError, Name> {
     if (!Name.validate(name)) {
-      return left(new InvalidEmailError())
+      return left(new InvalidNameError(name))
     }
 
     return right(new Name(name))

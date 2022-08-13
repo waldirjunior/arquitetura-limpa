@@ -31,10 +31,10 @@ describe('Register user on mailing list use case', () => {
     const name = 'any_name'
     const invalidEmail = 'invalid_email'
 
-    const response = await usecase.registerUserOnMailingList({ name, email: invalidEmail })
+    const response = (await usecase.registerUserOnMailingList({ name, email: invalidEmail })).value as Error
     const user = await repo.findUserByEmail(invalidEmail)
     expect(user).toBeNull()
-    expect(response.value).toBeInstanceOf(InvalidEmailError)
+    expect(response.name).toEqual('InvalidEmailError')
   })
 
   test('should not add user with invalid name to mailing list', async () => {

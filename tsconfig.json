@@ -4,6 +4,11 @@
         "module": "CommonJS",
         "target": "es2019",
         "esModuleInterop": true,
-        "allowJs": true // Habilitar o uso javacript dentro do typescript
+        "allowJs": true, // Habilitar o uso javacript dentro do typescript
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "@test/*": ["test/*"]
+        }
     }
 }

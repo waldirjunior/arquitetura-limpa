@@ -1,7 +1,7 @@
-import { InvalidNameError, InvalidEmailError } from './../../entities/errors'
-import { Either, left, right } from './../../shared'
-import { UserData, User } from './../../entities'
-import { UserRepository } from './ports'
+import { InvalidNameError, InvalidEmailError } from '@/entities/errors'
+import { Either, left, right } from '@/shared'
+import { UserData, User } from '@/entities'
+import { UserRepository } from '@/usecases/register-user-on-mailing-list/ports'
 
 export class RegisterUserOnMailingList {
   private readonly userRepo: UserRepository

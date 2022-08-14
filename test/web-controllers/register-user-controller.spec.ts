@@ -63,12 +63,12 @@ describe('Register up web controller', () => {
   })
 
   test('should return status code 400 when request is missing user name', async () => {
-    const requestWithInvalidName: HttpRequest = {
+    const requestWithMissingName: HttpRequest = {
       body: {
         email: 'any@mail.com'
       }
     }
-    const response: HttpResponse = await controller.handle(requestWithInvalidName)
+    const response: HttpResponse = await controller.handle(requestWithMissingName)
 
     expect(response.statusCode).toEqual(400)
     expect(response.body).toBeInstanceOf(MissingParamError)
@@ -76,12 +76,12 @@ describe('Register up web controller', () => {
   })
 
   test('should return status code 400 when request is missing user email', async () => {
-    const requestWithInvalidEmail: HttpRequest = {
+    const requestWithMissingEmail: HttpRequest = {
       body: {
         name: 'Any name'
       }
     }
-    const response: HttpResponse = await controller.handle(requestWithInvalidEmail)
+    const response: HttpResponse = await controller.handle(requestWithMissingEmail)
 
     expect(response.statusCode).toEqual(400)
     expect(response.body).toBeInstanceOf(MissingParamError)
@@ -89,11 +89,11 @@ describe('Register up web controller', () => {
   })
 
   test('should return status code 400 when request is missing user name and email', async () => {
-    const requestWithMissingValues: HttpRequest = {
+    const requestWithMissingNameAndEmail: HttpRequest = {
       body: {
       }
     }
-    const response: HttpResponse = await controller.handle(requestWithMissingValues)
+    const response: HttpResponse = await controller.handle(requestWithMissingNameAndEmail)
 
     expect(response.statusCode).toEqual(400)
     expect(response.body).toBeInstanceOf(MissingParamError)

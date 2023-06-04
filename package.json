@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test-verbose": "jest --passWithNoTests --runInBand",
     "test-unit": "npm test -- --watch -c jest-unit-config.js",
@@ -44,5 +45,8 @@
     "nodemailer": "^6.7.0"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "_moduleAliases": {
+    "@": "dist"
+  }
 }

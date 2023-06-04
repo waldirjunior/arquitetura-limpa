@@ -1,10 +1,10 @@
 import { UseCase } from '@/usecases/ports'
 import { MissingParamError } from '@/web-controllers/errors/missing-param-error'
 import { UserData } from '@/entities'
-import { HttpResponse, HttpRequest } from '@/web-controllers/ports'
+import { HttpResponse, HttpRequest, Controller } from '@/web-controllers/ports'
 import { badRequest, created, serverError } from '@/web-controllers/util'
 
-export class RegisterUserController {
+export class RegisterUserController implements Controller {
   private readonly usecase: UseCase
 
   constructor (usecase: UseCase) {
